@@ -1,0 +1,36 @@
+#include <stdio.h>
+
+float calculate_simple_interest(float principal, int years, char senior_citizen) {
+    float rate_of_interest;
+
+    if (senior_citizen == 'y' || senior_citizen == 'Y') {
+        rate_of_interest = 12.0;
+    } else {
+        rate_of_interest = 10.0;
+    }
+
+    float interest = (principal * rate_of_interest * years) / 100.0;
+    return interest;
+}
+
+int main() {
+    float principal, interest;
+    int years;
+    char senior_citizen;
+
+    printf("Enter the principal amount: ");
+    scanf("%f", &principal);
+
+    printf("Enter the number of years: ");
+    scanf("%d", &years);
+
+    printf("Is the customer a senior citizen (y/n): ");
+    scanf(" %c", &senior_citizen);
+
+    interest = calculate_simple_interest(principal, years, senior_citizen);
+
+  
+    printf("Simple Interest: %.2f\n", interest);
+
+    return 0;
+}
