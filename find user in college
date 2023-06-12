@@ -1,0 +1,30 @@
+#include <stdio.h>
+
+int count_students(int total_users, int total_staff) {
+    // Calculate the number of non-teaching staff
+    int non_teaching_staff = total_staff / 3;
+
+    // Calculate the number of student users
+    int students = total_users - total_staff - non_teaching_staff;
+
+    return students;
+}
+
+int main() {
+    int total_users, total_staff;
+
+    // Get the total number of users and staff from the client
+    printf("Enter the total number of users: ");
+    scanf("%d", &total_users);
+
+    printf("Enter the total number of staff users: ");
+    scanf("%d", &total_staff);
+
+    // Calculate the number of student users
+    int students = count_students(total_users, total_staff);
+
+    // Display the result
+    printf("Number of student users: %d\n", students);
+
+    return 0;
+}
