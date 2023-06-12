@@ -1,0 +1,33 @@
+#include <stdio.h>
+
+#define MAX_SIZE 100
+
+int main() {
+    int arr[MAX_SIZE];
+    int size, i, sum = 0;
+    float average;
+
+
+    printf("Enter the size of the array (up to %d): ", MAX_SIZE);
+    scanf("%d", &size);
+
+  
+    printf("Enter the elements of the array: ");
+    for (i = 0; i < size; i++) {
+        scanf("%d", &arr[i]);
+    }
+
+
+    for (i = 0; i < size; i++) {
+        sum += arr[i];
+    }
+
+ 
+    average = (float) sum / size;
+
+
+    printf("Sum of the elements: %d\n", sum);
+    printf("Average of the elements: %.2f\n", average);
+
+    return 0;
+}
